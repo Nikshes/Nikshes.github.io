@@ -16,7 +16,7 @@ app.controller("mainCtrl", function ($scope, $http){
 function weatherReq (searchValue, $http, $scope){
 	$http({
   method: 'GET',
-  url: 'http://api.openweathermap.org/data/2.5/weather?q='+searchValue+'&APPID=fdc9932c1f79cd56ea573b23f2b47010&units=metric'
+  url: 'https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?q='+searchValue+'&APPID=fdc9932c1f79cd56ea573b23f2b47010&units=metric'
   	}).then(function successCallback(response) {
   		return showWeather($scope, response)
  	 }, function errorCallback(response) {
