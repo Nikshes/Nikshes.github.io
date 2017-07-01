@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather in your city</title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body ng-app="myApp">
+<div ng-controller="mainCtrl" class="weatherContainer">
+	<div class="mainInfo">
+		<div class="searchBox">
+		<input type="text" placeholder="Your city name" ng-model="city" id="autocomplete" required ng-keyup="$event.keyCode === 13 && clickSearch()">
+		<button ng-click="clickSearch()" id="searchBtn">Search</button>
+		</div>
+		<p class="weatherTitle">{{"Weather in "+cityName}}</p>
+		<div class="tempBox">
+			<p>{{weather}}</p>
+			<p class="weatherTitle">{{temp}}</p>
+		</div>
+	</div>	
+	<div class="weatherBox">
+		<div class="weatherType">
+			<p>Wind:</p>
+			<p>Cloudiness:</p>
+			<p>Pressure:</p>
+			<p>Humidity:</p>
+		</div>
+		<div class="weatherValue">
+			<p>{{wind}}</p>
+			<p>{{cloudiness}}</p>
+			<p>{{pressure}}</p>
+			<p>{{humidity}}</p>
+		</div>
+	</div>
+</div>
+
+</body>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&language=en"></script>
+<script type="text/javascript" src="./angularFiles/angular.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</html>
