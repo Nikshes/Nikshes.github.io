@@ -8,7 +8,7 @@ app.controller("mainCtrl", function ($scope, $http){
 	}
 	angular.element(document).ready(function () {
         cityFind()
-        var searchValue = "Moscow, Russia"
+        var searchValue = "Saint Petersburg, Russia"
 		weatherReq(searchValue, $http,$scope)
     });
 })
